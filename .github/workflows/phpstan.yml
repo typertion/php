@@ -1,0 +1,12 @@
+name: "Phpstan"
+
+on:
+  pull_request:
+
+  push:
+    branches: ["*"]
+
+jobs:
+  build:
+    name: "Phpstan"
+    uses: contributte/.github/.github/workflows/phpstan.yml@master
