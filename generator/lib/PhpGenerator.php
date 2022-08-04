@@ -36,18 +36,20 @@ final class PhpGenerator {
 			$method = $class->addMethod($type->name)
 				->setStatic();
 
-			$method->addParameter('value')
-				->setType('mixed');
-
 			foreach ($type->comments as $comment) {
 				$method->addComment($comment);
 			}
 
+			$method->addParameter('value');
+//				->setType('mixed'); // php 8.0
+
+			$method->addComment('@param mixed $value');
+
 			foreach ($type->parameters as $parameter) {
 				$method->addParameter($parameter->name)
-					->setType($parameter->type);
+					->setType($parameter->getType());
 
-				if ($commentType = $parameter->commentType) {
+				if ($commentType = $parameter->getCommentType()) {
 					$method->addComment(sprintf('@param %s $%s', $commentType, $parameter->name));
 				}
 			}
@@ -73,7 +75,7 @@ final class PhpGenerator {
 				)
 			);
 
-			$method->setReturnType((string) Type::fromString($type->typesToString()));
+			$method->setReturnType($type->getReturnType());
 		}
 
 		FileSystem::write(
@@ -98,17 +100,18 @@ final class PhpGenerator {
 			$method = $class->addMethod($type->name)
 				->setStatic();
 
-			$method->addParameter('array')
-				->setType('array');
-
-			$method->addParameter('key')
-				->setType('int|string');
-
 			foreach ($type->comments as $comment) {
 				$method->addComment($comment);
 			}
 
+			$method->addParameter('array')
+				->setType('array');
+
+			$method->addParameter('key');
+//				->setType('int|string'); -- php 8.0
+
 			$method->addComment('@param mixed[] $array');
+			$method->addComment('@param int|string $key');
 
 			$signatureCall = [];
 
@@ -131,7 +134,7 @@ final class PhpGenerator {
 				$method->addComment(sprintf('@return %s', $type->returnTypesCommentToString()));
 			}
 
-			$method->addBody('if (!array_key_exists($key, $array)) {');
+			$method->addBody('if (!\array_key_exists($key, $array)) {');
 			$method->addBody("\tthrow OutOfBoundsException::create(\$key, \$array);");
 			$method->addBody('}');
 
@@ -141,7 +144,7 @@ final class PhpGenerator {
 			$signatureCall = $signatureCall ? ', ' . implode(', ', $signatureCall) : '';
 			$method->addBody(sprintf('return TypeAssert::%s($array[$key]%s, $label);', $method->getName(), $signatureCall));
 
-			$method->setReturnType((string) Type::fromString($type->typesToString()));
+			$method->setReturnType($type->getReturnType());
 		}
 
 		FileSystem::write(

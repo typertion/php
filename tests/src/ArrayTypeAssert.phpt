@@ -3,7 +3,7 @@
 use Tester\Assert;
 use Typertion\Php\ArrayTypeAssert;
 
-require __DIR__ . '/bootstrap.php';
+require __DIR__ . '/../bootstrap.php';
 
 Assert::true(ArrayTypeAssert::bool(['bool' => true], 'bool'));
 

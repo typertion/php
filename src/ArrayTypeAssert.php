@@ -10,11 +10,12 @@ class ArrayTypeAssert
 {
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return mixed[]
 	 */
-	public static function array(array $array, int|string $key, ?string $label = null): array
+	public static function array(array $array, $key, ?string $label = null): array
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -24,11 +25,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return mixed[]|null
 	 */
-	public static function arrayOrNull(array $array, int|string $key, ?string $label = null): ?array
+	public static function arrayOrNull(array $array, $key, ?string $label = null): ?array
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -38,10 +40,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function object(array $array, int|string $key, ?string $label = null): object
+	public static function object(array $array, $key, ?string $label = null): object
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -51,10 +54,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function objectOrNull(array $array, int|string $key, ?string $label = null): ?object
+	public static function objectOrNull(array $array, $key, ?string $label = null): ?object
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -64,11 +68,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return mixed[]|object
 	 */
-	public static function arrayOrObject(array $array, int|string $key, ?string $label = null): array|object
+	public static function arrayOrObject(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -78,11 +83,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return mixed[]|object|null
 	 */
-	public static function arrayOrObjectOrNull(array $array, int|string $key, ?string $label = null): array|object|null
+	public static function arrayOrObjectOrNull(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -92,10 +98,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function string(array $array, int|string $key, ?string $label = null): string
+	public static function string(array $array, $key, ?string $label = null): string
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -105,10 +112,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function stringOrNull(array $array, int|string $key, ?string $label = null): ?string
+	public static function stringOrNull(array $array, $key, ?string $label = null): ?string
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -118,10 +126,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function int(array $array, int|string $key, ?string $label = null): int
+	public static function int(array $array, $key, ?string $label = null): int
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -131,10 +140,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function intOrNull(array $array, int|string $key, ?string $label = null): ?int
+	public static function intOrNull(array $array, $key, ?string $label = null): ?int
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -144,10 +154,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function float(array $array, int|string $key, ?string $label = null): float
+	public static function float(array $array, $key, ?string $label = null): float
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -157,10 +168,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function floatOrNull(array $array, int|string $key, ?string $label = null): ?float
+	public static function floatOrNull(array $array, $key, ?string $label = null): ?float
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -170,10 +182,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
+	 * @return int|float
 	 */
-	public static function intOrFloat(array $array, int|string $key, ?string $label = null): int|float
+	public static function intOrFloat(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -183,10 +197,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
+	 * @return int|float|null
 	 */
-	public static function intOrFloatOrNull(array $array, int|string $key, ?string $label = null): int|float|null
+	public static function intOrFloatOrNull(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -196,10 +212,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function bool(array $array, int|string $key, ?string $label = null): bool
+	public static function bool(array $array, $key, ?string $label = null): bool
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -209,10 +226,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function boolOrNull(array $array, int|string $key, ?string $label = null): ?bool
+	public static function boolOrNull(array $array, $key, ?string $label = null): ?bool
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -222,10 +240,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function callable(array $array, int|string $key, ?string $label = null): callable
+	public static function callable(array $array, $key, ?string $label = null): callable
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -235,10 +254,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function callableOrNull(array $array, int|string $key, ?string $label = null): ?callable
+	public static function callableOrNull(array $array, $key, ?string $label = null): ?callable
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -248,11 +268,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return iterable<mixed>
 	 */
-	public static function iterable(array $array, int|string $key, ?string $label = null): iterable
+	public static function iterable(array $array, $key, ?string $label = null): iterable
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -262,11 +283,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return iterable<mixed>|null
 	 */
-	public static function iterableOrNull(array $array, int|string $key, ?string $label = null): ?iterable
+	public static function iterableOrNull(array $array, $key, ?string $label = null): ?iterable
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -276,10 +298,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
+	 * @return int|float|string|bool
 	 */
-	public static function scalar(array $array, int|string $key, ?string $label = null): int|float|string|bool
+	public static function scalar(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -289,10 +313,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
+	 * @return int|float|string|bool|null
 	 */
-	public static function scalarOrNull(array $array, int|string $key, ?string $label = null): int|float|string|bool|null
+	public static function scalarOrNull(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -302,10 +328,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
+	 * @return int|float|string
 	 */
-	public static function numeric(array $array, int|string $key, ?string $label = null): int|float|string
+	public static function numeric(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -315,10 +343,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
+	 * @return int|float|string|null
 	 */
-	public static function numericOrNull(array $array, int|string $key, ?string $label = null): int|float|string|null
+	public static function numericOrNull(array $array, $key, ?string $label = null)
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -328,10 +358,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function floatish(array $array, int|string $key, ?string $label = null): float
+	public static function floatish(array $array, $key, ?string $label = null): float
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -341,10 +372,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function floatishOrNull(array $array, int|string $key, ?string $label = null): ?float
+	public static function floatishOrNull(array $array, $key, ?string $label = null): ?float
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -354,10 +386,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function integerish(array $array, int|string $key, ?string $label = null): int
+	public static function integerish(array $array, $key, ?string $label = null): int
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -367,10 +400,11 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 */
-	public static function integerishOrNull(array $array, int|string $key, ?string $label = null): ?int
+	public static function integerishOrNull(array $array, $key, ?string $label = null): ?int
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -382,12 +416,13 @@ class ArrayTypeAssert
 	 * @deprecated use instanceOf instead
 	 * @template TType of object
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @param class-string<TType> $type
 	 * @return TType
 	 */
-	public static function instance(array $array, int|string $key, string $type, ?string $label = null): object
+	public static function instance(array $array, $key, string $type, ?string $label = null): object
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -399,12 +434,13 @@ class ArrayTypeAssert
 	 * @deprecated use instanceOf instead
 	 * @template TType of object
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @param class-string<TType> $type
 	 * @return TType|null
 	 */
-	public static function instanceOrNull(array $array, int|string $key, string $type, ?string $label = null): ?object
+	public static function instanceOrNull(array $array, $key, string $type, ?string $label = null): ?object
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -415,12 +451,13 @@ class ArrayTypeAssert
 	/**
 	 * @template TType of object
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @param class-string<TType> $type
 	 * @return TType
 	 */
-	public static function instanceOf(array $array, int|string $key, string $type, ?string $label = null): object
+	public static function instanceOf(array $array, $key, string $type, ?string $label = null): object
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -431,12 +468,13 @@ class ArrayTypeAssert
 	/**
 	 * @template TType of object
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @param class-string<TType> $type
 	 * @return TType|null
 	 */
-	public static function instanceOfOrNull(array $array, int|string $key, string $type, ?string $label = null): ?object
+	public static function instanceOfOrNull(array $array, $key, string $type, ?string $label = null): ?object
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -446,11 +484,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return class-string
 	 */
-	public static function classString(array $array, int|string $key, ?string $label = null): string
+	public static function classString(array $array, $key, ?string $label = null): string
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -460,11 +499,12 @@ class ArrayTypeAssert
 
 	/**
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @return class-string|null
 	 */
-	public static function classStringOrNull(array $array, int|string $key, ?string $label = null): ?string
+	public static function classStringOrNull(array $array, $key, ?string $label = null): ?string
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -475,12 +515,13 @@ class ArrayTypeAssert
 	/**
 	 * @template TClassString
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @param class-string<TClassString> $type
 	 * @return class-string<TClassString>
 	 */
-	public static function classStringOf(array $array, int|string $key, string $type, ?string $label = null): string
+	public static function classStringOf(array $array, $key, string $type, ?string $label = null): string
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -491,12 +532,13 @@ class ArrayTypeAssert
 	/**
 	 * @template TClassString
 	 * @param mixed[] $array
+	 * @param int|string $key
 	 * @param class-string<TClassString> $type
 	 * @return class-string<TClassString>|null
 	 */
-	public static function classStringOfOrNull(array $array, int|string $key, string $type, ?string $label = null): ?string
+	public static function classStringOfOrNull(array $array, $key, string $type, ?string $label = null): ?string
 	{
-		if (!array_key_exists($key, $array)) {
+		if (!\array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 

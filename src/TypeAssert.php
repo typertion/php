@@ -10,11 +10,12 @@ use Typertion\Php\Helper\Validator;
 class TypeAssert
 {
 	/**
+	 * @param mixed $value
 	 * @return mixed[]
 	 */
-	public static function array(mixed $value, ?string $label = null): array
+	public static function array($value, ?string $label = null): array
 	{
-		if (is_array($value)) {
+		if (\is_array($value)) {
 			return $value;
 		}
 
@@ -23,11 +24,12 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return mixed[]|null
 	 */
-	public static function arrayOrNull(mixed $value, ?string $label = null): ?array
+	public static function arrayOrNull($value, ?string $label = null): ?array
 	{
-		if (is_array($value) || $value === null) {
+		if (\is_array($value) || $value === null) {
 			return $value;
 		}
 
@@ -35,9 +37,12 @@ class TypeAssert
 	}
 
 
-	public static function object(mixed $value, ?string $label = null): object
+	/**
+	 * @param mixed $value
+	 */
+	public static function object($value, ?string $label = null): object
 	{
-		if (is_object($value)) {
+		if (\is_object($value)) {
 			return $value;
 		}
 
@@ -45,9 +50,12 @@ class TypeAssert
 	}
 
 
-	public static function objectOrNull(mixed $value, ?string $label = null): ?object
+	/**
+	 * @param mixed $value
+	 */
+	public static function objectOrNull($value, ?string $label = null): ?object
 	{
-		if (is_object($value) || $value === null) {
+		if (\is_object($value) || $value === null) {
 			return $value;
 		}
 
@@ -56,11 +64,12 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return mixed[]|object
 	 */
-	public static function arrayOrObject(mixed $value, ?string $label = null): array|object
+	public static function arrayOrObject($value, ?string $label = null)
 	{
-		if (is_array($value) || is_object($value)) {
+		if (\is_array($value) || \is_object($value)) {
 			return $value;
 		}
 
@@ -69,11 +78,12 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return mixed[]|object|null
 	 */
-	public static function arrayOrObjectOrNull(mixed $value, ?string $label = null): array|object|null
+	public static function arrayOrObjectOrNull($value, ?string $label = null)
 	{
-		if (is_array($value) || is_object($value) || $value === null) {
+		if (\is_array($value) || \is_object($value) || $value === null) {
 			return $value;
 		}
 
@@ -81,9 +91,12 @@ class TypeAssert
 	}
 
 
-	public static function string(mixed $value, ?string $label = null): string
+	/**
+	 * @param mixed $value
+	 */
+	public static function string($value, ?string $label = null): string
 	{
-		if (is_string($value)) {
+		if (\is_string($value)) {
 			return $value;
 		}
 
@@ -91,9 +104,12 @@ class TypeAssert
 	}
 
 
-	public static function stringOrNull(mixed $value, ?string $label = null): ?string
+	/**
+	 * @param mixed $value
+	 */
+	public static function stringOrNull($value, ?string $label = null): ?string
 	{
-		if (is_string($value) || $value === null) {
+		if (\is_string($value) || $value === null) {
 			return $value;
 		}
 
@@ -101,9 +117,12 @@ class TypeAssert
 	}
 
 
-	public static function int(mixed $value, ?string $label = null): int
+	/**
+	 * @param mixed $value
+	 */
+	public static function int($value, ?string $label = null): int
 	{
-		if (is_int($value)) {
+		if (\is_int($value)) {
 			return $value;
 		}
 
@@ -111,9 +130,12 @@ class TypeAssert
 	}
 
 
-	public static function intOrNull(mixed $value, ?string $label = null): ?int
+	/**
+	 * @param mixed $value
+	 */
+	public static function intOrNull($value, ?string $label = null): ?int
 	{
-		if (is_int($value) || $value === null) {
+		if (\is_int($value) || $value === null) {
 			return $value;
 		}
 
@@ -121,9 +143,12 @@ class TypeAssert
 	}
 
 
-	public static function float(mixed $value, ?string $label = null): float
+	/**
+	 * @param mixed $value
+	 */
+	public static function float($value, ?string $label = null): float
 	{
-		if (is_float($value)) {
+		if (\is_float($value)) {
 			return $value;
 		}
 
@@ -131,9 +156,12 @@ class TypeAssert
 	}
 
 
-	public static function floatOrNull(mixed $value, ?string $label = null): ?float
+	/**
+	 * @param mixed $value
+	 */
+	public static function floatOrNull($value, ?string $label = null): ?float
 	{
-		if (is_float($value) || $value === null) {
+		if (\is_float($value) || $value === null) {
 			return $value;
 		}
 
@@ -141,9 +169,13 @@ class TypeAssert
 	}
 
 
-	public static function intOrFloat(mixed $value, ?string $label = null): int|float
+	/**
+	 * @param mixed $value
+	 * @return int|float
+	 */
+	public static function intOrFloat($value, ?string $label = null)
 	{
-		if (is_int($value) || is_float($value)) {
+		if (\is_int($value) || \is_float($value)) {
 			return $value;
 		}
 
@@ -151,9 +183,13 @@ class TypeAssert
 	}
 
 
-	public static function intOrFloatOrNull(mixed $value, ?string $label = null): int|float|null
+	/**
+	 * @param mixed $value
+	 * @return int|float|null
+	 */
+	public static function intOrFloatOrNull($value, ?string $label = null)
 	{
-		if (is_int($value) || is_float($value) || $value === null) {
+		if (\is_int($value) || \is_float($value) || $value === null) {
 			return $value;
 		}
 
@@ -161,9 +197,12 @@ class TypeAssert
 	}
 
 
-	public static function bool(mixed $value, ?string $label = null): bool
+	/**
+	 * @param mixed $value
+	 */
+	public static function bool($value, ?string $label = null): bool
 	{
-		if (is_bool($value)) {
+		if (\is_bool($value)) {
 			return $value;
 		}
 
@@ -171,9 +210,12 @@ class TypeAssert
 	}
 
 
-	public static function boolOrNull(mixed $value, ?string $label = null): ?bool
+	/**
+	 * @param mixed $value
+	 */
+	public static function boolOrNull($value, ?string $label = null): ?bool
 	{
-		if (is_bool($value) || $value === null) {
+		if (\is_bool($value) || $value === null) {
 			return $value;
 		}
 
@@ -181,9 +223,12 @@ class TypeAssert
 	}
 
 
-	public static function callable(mixed $value, ?string $label = null): callable
+	/**
+	 * @param mixed $value
+	 */
+	public static function callable($value, ?string $label = null): callable
 	{
-		if (is_callable($value)) {
+		if (\is_callable($value)) {
 			return $value;
 		}
 
@@ -191,9 +236,12 @@ class TypeAssert
 	}
 
 
-	public static function callableOrNull(mixed $value, ?string $label = null): ?callable
+	/**
+	 * @param mixed $value
+	 */
+	public static function callableOrNull($value, ?string $label = null): ?callable
 	{
-		if (is_callable($value) || $value === null) {
+		if (\is_callable($value) || $value === null) {
 			return $value;
 		}
 
@@ -202,11 +250,12 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return iterable<mixed>
 	 */
-	public static function iterable(mixed $value, ?string $label = null): iterable
+	public static function iterable($value, ?string $label = null): iterable
 	{
-		if (is_iterable($value)) {
+		if (\is_iterable($value)) {
 			return $value;
 		}
 
@@ -215,11 +264,12 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return iterable<mixed>|null
 	 */
-	public static function iterableOrNull(mixed $value, ?string $label = null): ?iterable
+	public static function iterableOrNull($value, ?string $label = null): ?iterable
 	{
-		if (is_iterable($value) || $value === null) {
+		if (\is_iterable($value) || $value === null) {
 			return $value;
 		}
 
@@ -227,9 +277,13 @@ class TypeAssert
 	}
 
 
-	public static function scalar(mixed $value, ?string $label = null): int|float|string|bool
+	/**
+	 * @param mixed $value
+	 * @return int|float|string|bool
+	 */
+	public static function scalar($value, ?string $label = null)
 	{
-		if (is_scalar($value)) {
+		if (\is_scalar($value)) {
 			return $value;
 		}
 
@@ -237,9 +291,13 @@ class TypeAssert
 	}
 
 
-	public static function scalarOrNull(mixed $value, ?string $label = null): int|float|string|bool|null
+	/**
+	 * @param mixed $value
+	 * @return int|float|string|bool|null
+	 */
+	public static function scalarOrNull($value, ?string $label = null)
 	{
-		if (is_scalar($value) || $value === null) {
+		if (\is_scalar($value) || $value === null) {
 			return $value;
 		}
 
@@ -247,9 +305,13 @@ class TypeAssert
 	}
 
 
-	public static function numeric(mixed $value, ?string $label = null): int|float|string
+	/**
+	 * @param mixed $value
+	 * @return int|float|string
+	 */
+	public static function numeric($value, ?string $label = null)
 	{
-		if (is_numeric($value)) {
+		if (\is_numeric($value)) {
 			return $value;
 		}
 
@@ -257,9 +319,13 @@ class TypeAssert
 	}
 
 
-	public static function numericOrNull(mixed $value, ?string $label = null): int|float|string|null
+	/**
+	 * @param mixed $value
+	 * @return int|float|string|null
+	 */
+	public static function numericOrNull($value, ?string $label = null)
 	{
-		if (is_numeric($value) || $value === null) {
+		if (\is_numeric($value) || $value === null) {
 			return $value;
 		}
 
@@ -267,7 +333,10 @@ class TypeAssert
 	}
 
 
-	public static function floatish(mixed $value, ?string $label = null): float
+	/**
+	 * @param mixed $value
+	 */
+	public static function floatish($value, ?string $label = null): float
 	{
 		if (Validator::floatish($value)) {
 			return $value;
@@ -277,7 +346,10 @@ class TypeAssert
 	}
 
 
-	public static function floatishOrNull(mixed $value, ?string $label = null): ?float
+	/**
+	 * @param mixed $value
+	 */
+	public static function floatishOrNull($value, ?string $label = null): ?float
 	{
 		if ($value === null || Validator::floatish($value)) {
 			return $value;
@@ -287,7 +359,10 @@ class TypeAssert
 	}
 
 
-	public static function integerish(mixed $value, ?string $label = null): int
+	/**
+	 * @param mixed $value
+	 */
+	public static function integerish($value, ?string $label = null): int
 	{
 		if (Validator::integerish($value)) {
 			return $value;
@@ -297,7 +372,10 @@ class TypeAssert
 	}
 
 
-	public static function integerishOrNull(mixed $value, ?string $label = null): ?int
+	/**
+	 * @param mixed $value
+	 */
+	public static function integerishOrNull($value, ?string $label = null): ?int
 	{
 		if ($value === null || Validator::integerish($value)) {
 			return $value;
@@ -310,10 +388,11 @@ class TypeAssert
 	/**
 	 * @deprecated use instanceOf instead
 	 * @template TType of object
+	 * @param mixed $value
 	 * @param class-string<TType> $type
 	 * @return TType
 	 */
-	public static function instance(mixed $value, string $type, ?string $label = null): object
+	public static function instance($value, string $type, ?string $label = null): object
 	{
 		if ($value instanceof $type) {
 			return $value;
@@ -326,10 +405,11 @@ class TypeAssert
 	/**
 	 * @deprecated use instanceOf instead
 	 * @template TType of object
+	 * @param mixed $value
 	 * @param class-string<TType> $type
 	 * @return TType|null
 	 */
-	public static function instanceOrNull(mixed $value, string $type, ?string $label = null): ?object
+	public static function instanceOrNull($value, string $type, ?string $label = null): ?object
 	{
 		if ($value === null || $value instanceof $type) {
 			return $value;
@@ -341,10 +421,11 @@ class TypeAssert
 
 	/**
 	 * @template TType of object
+	 * @param mixed $value
 	 * @param class-string<TType> $type
 	 * @return TType
 	 */
-	public static function instanceOf(mixed $value, string $type, ?string $label = null): object
+	public static function instanceOf($value, string $type, ?string $label = null): object
 	{
 		if ($value instanceof $type) {
 			return $value;
@@ -356,10 +437,11 @@ class TypeAssert
 
 	/**
 	 * @template TType of object
+	 * @param mixed $value
 	 * @param class-string<TType> $type
 	 * @return TType|null
 	 */
-	public static function instanceOfOrNull(mixed $value, string $type, ?string $label = null): ?object
+	public static function instanceOfOrNull($value, string $type, ?string $label = null): ?object
 	{
 		if ($value === null || $value instanceof $type) {
 			return $value;
@@ -370,9 +452,10 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return class-string
 	 */
-	public static function classString(mixed $value, ?string $label = null): string
+	public static function classString($value, ?string $label = null): string
 	{
 		if (Validator::classString($value)) {
 			return $value;
@@ -383,9 +466,10 @@ class TypeAssert
 
 
 	/**
+	 * @param mixed $value
 	 * @return class-string|null
 	 */
-	public static function classStringOrNull(mixed $value, ?string $label = null): ?string
+	public static function classStringOrNull($value, ?string $label = null): ?string
 	{
 		if ($value === null || Validator::classString($value)) {
 			return $value;
@@ -397,10 +481,11 @@ class TypeAssert
 
 	/**
 	 * @template TClassString
+	 * @param mixed $value
 	 * @param class-string<TClassString> $type
 	 * @return class-string<TClassString>
 	 */
-	public static function classStringOf(mixed $value, string $type, ?string $label = null): string
+	public static function classStringOf($value, string $type, ?string $label = null): string
 	{
 		if (Validator::classStringOf($value, $type)) {
 			return $value;
@@ -412,10 +497,11 @@ class TypeAssert
 
 	/**
 	 * @template TClassString
+	 * @param mixed $value
 	 * @param class-string<TClassString> $type
 	 * @return class-string<TClassString>|null
 	 */
-	public static function classStringOfOrNull(mixed $value, string $type, ?string $label = null): ?string
+	public static function classStringOfOrNull($value, string $type, ?string $label = null): ?string
 	{
 		if ($value === null || Validator::classStringOf($value, $type)) {
 			return $value;

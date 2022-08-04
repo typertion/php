@@ -14,27 +14,27 @@ final class SignatureFactory
 		foreach (['float', 'int', 'string', 'object', 'bool', 'callable'] as $type) {
 			$signature->addType($type)
 				->setReturnType($type)
-				->addValidator('is_' . $type . '($value)');
+				->addValidator('\is_' . $type . '($value)');
 		}
 
 		$signature->addType('array')
 			->setReturnType('array')
 			->setReturnTypeComment('mixed[]')
-			->addValidator('is_array($value)');
+			->addValidator('\is_array($value)');
 
 		$signature->addType('iterable')
 			->setReturnType('iterable')
 			->setReturnTypeComment('iterable<mixed>')
-			->addValidator('is_iterable($value)');
+			->addValidator('\is_iterable($value)');
 
 		$signature->addType('scalar')
 			->setReturnType($types = ['int', 'float', 'string', 'bool'])
-			->addValidator('is_scalar($value)')
+			->addValidator('\is_scalar($value)')
 			->conflict($types);
 
 		$signature->addType('numeric')
 			->setReturnType(['int|float|string'])
-			->addValidator('is_numeric($value)');
+			->addValidator('\is_numeric($value)');
 
 		$signature->addType('integerish')
 			->setReturnType('int')

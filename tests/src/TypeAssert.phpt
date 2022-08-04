@@ -3,10 +3,10 @@
 use Typertion\Generator\Manifest\JsonManifest;
 use Typertion\Php\TypeAssert;
 
-require __DIR__ . '/bootstrap.php';
-require __DIR__ . '/functions.php';
+require __DIR__ . '/../bootstrap.php';
+require __DIR__ . '/../functions.php';
 
-$manifest = JsonManifest::load(__DIR__ . '/../generator/manifest.json');
+$manifest = JsonManifest::load(__DIR__ . '/../../generator/manifest.json');
 
 foreach ($manifest as $item) {
 	$name = $item['name'];
