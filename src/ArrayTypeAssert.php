@@ -14,7 +14,7 @@ class ArrayTypeAssert
 	 */
 	public static function array(array $array, int|string $key, ?string $label = null): array
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -28,7 +28,7 @@ class ArrayTypeAssert
 	 */
 	public static function arrayOrNull(array $array, int|string $key, ?string $label = null): ?array
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -41,7 +41,7 @@ class ArrayTypeAssert
 	 */
 	public static function object(array $array, int|string $key, ?string $label = null): object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -54,7 +54,7 @@ class ArrayTypeAssert
 	 */
 	public static function objectOrNull(array $array, int|string $key, ?string $label = null): ?object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -68,7 +68,7 @@ class ArrayTypeAssert
 	 */
 	public static function arrayOrObject(array $array, int|string $key, ?string $label = null): array|object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -82,7 +82,7 @@ class ArrayTypeAssert
 	 */
 	public static function arrayOrObjectOrNull(array $array, int|string $key, ?string $label = null): array|object|null
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -95,7 +95,7 @@ class ArrayTypeAssert
 	 */
 	public static function string(array $array, int|string $key, ?string $label = null): string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -108,7 +108,7 @@ class ArrayTypeAssert
 	 */
 	public static function stringOrNull(array $array, int|string $key, ?string $label = null): ?string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -121,7 +121,7 @@ class ArrayTypeAssert
 	 */
 	public static function int(array $array, int|string $key, ?string $label = null): int
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -134,7 +134,7 @@ class ArrayTypeAssert
 	 */
 	public static function intOrNull(array $array, int|string $key, ?string $label = null): ?int
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -147,7 +147,7 @@ class ArrayTypeAssert
 	 */
 	public static function float(array $array, int|string $key, ?string $label = null): float
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -160,7 +160,7 @@ class ArrayTypeAssert
 	 */
 	public static function floatOrNull(array $array, int|string $key, ?string $label = null): ?float
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -173,7 +173,7 @@ class ArrayTypeAssert
 	 */
 	public static function intOrFloat(array $array, int|string $key, ?string $label = null): int|float
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -186,7 +186,7 @@ class ArrayTypeAssert
 	 */
 	public static function intOrFloatOrNull(array $array, int|string $key, ?string $label = null): int|float|null
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -199,7 +199,7 @@ class ArrayTypeAssert
 	 */
 	public static function bool(array $array, int|string $key, ?string $label = null): bool
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -212,7 +212,7 @@ class ArrayTypeAssert
 	 */
 	public static function boolOrNull(array $array, int|string $key, ?string $label = null): ?bool
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -225,7 +225,7 @@ class ArrayTypeAssert
 	 */
 	public static function callable(array $array, int|string $key, ?string $label = null): callable
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -238,7 +238,7 @@ class ArrayTypeAssert
 	 */
 	public static function callableOrNull(array $array, int|string $key, ?string $label = null): ?callable
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -252,7 +252,7 @@ class ArrayTypeAssert
 	 */
 	public static function iterable(array $array, int|string $key, ?string $label = null): iterable
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -266,7 +266,7 @@ class ArrayTypeAssert
 	 */
 	public static function iterableOrNull(array $array, int|string $key, ?string $label = null): ?iterable
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -279,7 +279,7 @@ class ArrayTypeAssert
 	 */
 	public static function scalar(array $array, int|string $key, ?string $label = null): int|float|string|bool
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -292,7 +292,7 @@ class ArrayTypeAssert
 	 */
 	public static function scalarOrNull(array $array, int|string $key, ?string $label = null): int|float|string|bool|null
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -305,7 +305,7 @@ class ArrayTypeAssert
 	 */
 	public static function numeric(array $array, int|string $key, ?string $label = null): int|float|string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -318,7 +318,7 @@ class ArrayTypeAssert
 	 */
 	public static function numericOrNull(array $array, int|string $key, ?string $label = null): int|float|string|null
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -331,7 +331,7 @@ class ArrayTypeAssert
 	 */
 	public static function floatish(array $array, int|string $key, ?string $label = null): float
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -344,7 +344,7 @@ class ArrayTypeAssert
 	 */
 	public static function floatishOrNull(array $array, int|string $key, ?string $label = null): ?float
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -357,7 +357,7 @@ class ArrayTypeAssert
 	 */
 	public static function integerish(array $array, int|string $key, ?string $label = null): int
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -370,7 +370,7 @@ class ArrayTypeAssert
 	 */
 	public static function integerishOrNull(array $array, int|string $key, ?string $label = null): ?int
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -387,7 +387,7 @@ class ArrayTypeAssert
 	 */
 	public static function instance(array $array, int|string $key, string $type, ?string $label = null): object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -404,7 +404,7 @@ class ArrayTypeAssert
 	 */
 	public static function instanceOrNull(array $array, int|string $key, string $type, ?string $label = null): ?object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -420,7 +420,7 @@ class ArrayTypeAssert
 	 */
 	public static function instanceOf(array $array, int|string $key, string $type, ?string $label = null): object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -436,7 +436,7 @@ class ArrayTypeAssert
 	 */
 	public static function instanceOfOrNull(array $array, int|string $key, string $type, ?string $label = null): ?object
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -450,7 +450,7 @@ class ArrayTypeAssert
 	 */
 	public static function classString(array $array, int|string $key, ?string $label = null): string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -464,7 +464,7 @@ class ArrayTypeAssert
 	 */
 	public static function classStringOrNull(array $array, int|string $key, ?string $label = null): ?string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -480,7 +480,7 @@ class ArrayTypeAssert
 	 */
 	public static function classStringOf(array $array, int|string $key, string $type, ?string $label = null): string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 
@@ -496,7 +496,7 @@ class ArrayTypeAssert
 	 */
 	public static function classStringOfOrNull(array $array, int|string $key, string $type, ?string $label = null): ?string
 	{
-		if (array_key_exists($key, $array)) {
+		if (!array_key_exists($key, $array)) {
 			throw OutOfBoundsException::create($key, $array);
 		}
 

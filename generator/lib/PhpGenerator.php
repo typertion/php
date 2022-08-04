@@ -131,7 +131,7 @@ final class PhpGenerator {
 				$method->addComment(sprintf('@return %s', $type->returnTypesCommentToString()));
 			}
 
-			$method->addBody('if (array_key_exists($key, $array)) {');
+			$method->addBody('if (!array_key_exists($key, $array)) {');
 			$method->addBody("\tthrow OutOfBoundsException::create(\$key, \$array);");
 			$method->addBody('}');
 

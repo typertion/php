@@ -1,0 +1,156 @@
+[
+    {
+        "name": "array",
+        "types": [
+            "array"
+        ],
+        "method": "array"
+    },
+    {
+        "name": "array|null",
+        "types": [
+            "array",
+            "null"
+        ],
+        "method": "arrayOrNull"
+    },
+    {
+        "name": "object",
+        "types": [
+            "object"
+        ],
+        "method": "object"
+    },
+    {
+        "name": "object|null",
+        "types": [
+            "object",
+            "null"
+        ],
+        "method": "objectOrNull"
+    },
+    {
+        "name": "array|object",
+        "types": [
+            "array",
+            "object"
+        ],
+        "method": "arrayOrObject"
+    },
+    {
+        "name": "array|object|null",
+        "types": [
+            "array",
+            "object",
+            "null"
+        ],
+        "method": "arrayOrObjectOrNull"
+    },
+    {
+        "name": "string",
+        "types": [
+            "string"
+        ],
+        "method": "string"
+    },
+    {
+        "name": "string|null",
+        "types": [
+            "string",
+            "null"
+        ],
+        "method": "stringOrNull"
+    },
+    {
+        "name": "int",
+        "types": [
+            "int"
+        ],
+        "method": "int"
+    },
+    {
+        "name": "int|null",
+        "types": [
+            "int",
+            "null"
+        ],
+        "method": "intOrNull"
+    },
+    {
+        "name": "float",
+        "types": [
+            "float"
+        ],
+        "method": "float"
+    },
+    {
+        "name": "float|null",
+        "types": [
+            "float",
+            "null"
+        ],
+        "method": "floatOrNull"
+    },
+    {
+        "name": "int|float",
+        "types": [
+            "int",
+            "float"
+        ],
+        "method": "intOrFloat"
+    },
+    {
+        "name": "int|float|null",
+        "types": [
+            "int",
+            "float",
+            "null"
+        ],
+        "method": "intOrFloatOrNull"
+    },
+    {
+        "name": "bool",
+        "types": [
+            "bool"
+        ],
+        "method": "bool"
+    },
+    {
+        "name": "bool|null",
+        "types": [
+            "bool",
+            "null"
+        ],
+        "method": "boolOrNull"
+    },
+    {
+        "name": "callable",
+        "types": [
+            "callable"
+        ],
+        "method": "callable"
+    },
+    {
+        "name": "callable|null",
+        "types": [
+            "callable",
+            "null"
+        ],
+        "method": "callableOrNull"
+    },
+    {
+        "name": "iterable",
+        "types": [
+            "iterable"
+        ],
+        "method": "iterable"
+    },
+    {
+        "name": "iterable|null",
+        "types": [
+            "iterable",
+            "null"
+        ],
+        "method": "iterableOrNull"
+    }
+]
