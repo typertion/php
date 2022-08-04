@@ -9,17 +9,19 @@ final class OutOfBoundsException extends Exception
 {
 
 	/**
+	 * @param string|int $index
 	 * @param mixed[] $array
 	 */
-	public static function create(string|int $index, array $array): self
+	public static function create($index, array $array): self
 	{
 		return new self(sprintf('Undefined index "%s"', $index) . self::didYouMean($array, $index));
 	}
 
 	/**
 	 * @param mixed[] $array
+	 * @param string|int $index
 	 */
-	private static function didYouMean(array $array, int|string $index): string
+	private static function didYouMean(array $array, $index): string
 	{
 		if (is_int($index)) {
 			return '.';
