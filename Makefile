@@ -1,5 +1,5 @@
 test:
-	vendor/bin/tester tests/src
+	vendor/bin/tester tests/src -C
 build:
 	php generator/index.php
 phpstan:
