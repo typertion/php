@@ -1,13 +1,12 @@
 <?php declare(strict_types = 1);
 
 use Nette\Utils\FileSystem;
-use Nette\Utils\Json;
 use Typertion\Php\TypeAssert;
 
 require __DIR__ . '/../bootstrap.php';
 require __DIR__ . '/../functions.php';
 
-$manifest = Json::decode(FileSystem::read(__DIR__ . '/../../generator/manifest.json'), Json::FORCE_ARRAY);
+$manifest = json_decode(FileSystem::read(__DIR__ . '/../../generator/manifest.json'), true, 512, JSON_THROW_ON_ERROR);
 
 foreach ($manifest as $item) {
 	$name = $item['name'];
