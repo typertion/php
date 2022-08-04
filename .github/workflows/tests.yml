@@ -13,7 +13,7 @@ jobs:
     with:
       php: "8.1"
       makefile: "test"
-      composer: "composer remove typertion/generator && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
+      composer: "composer remove typertion/generator --dev && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
 
   build80:
     name: "Nette Tester"
@@ -21,7 +21,7 @@ jobs:
     with:
       php: "8.0"
       makefile: "test"
-      composer: "composer remove typertion/generator && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
+      composer: "composer remove typertion/generator --dev && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
 
   build74:
     name: "Nette Tester"
@@ -29,4 +29,4 @@ jobs:
     with:
       php: "7.4"
       makefile: "test"
-      composer: "composer remove typertion/generator && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
+      composer: "composer remove typertion/generator --dev && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"

@@ -11,4 +11,4 @@ jobs:
     name: "Phpstan"
     uses: contributte/.github/.github/workflows/phpstan.yml@master
     with:
-      composer: "composer remove typertion/generator && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
+      composer: "composer remove typertion/generator --dev && composer update --no-interaction --no-progress --prefer-dist --prefer-stable"
