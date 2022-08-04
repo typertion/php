@@ -2,24 +2,24 @@
 
 use Tester\Assert;
 
-function success(string $name, string $type, callable $callback, mixed $value, mixed ... $arguments): void
+function success(string $name, string $type, callable $callback, $value, ... $arguments): void
 {
 	Assert::$counter++;
 
 	try {
 		$callback($value, ...$arguments);
-	} catch (Throwable) {
+	} catch (Throwable $e) {
 		Assert::fail(sprintf('%s: Exception thrown when pass "%s", debug type: "%s".', $name, $type, get_debug_type($value)));
 	}
 }
 
-function fail(string $name, string $type, callable $callback, mixed $value, mixed ... $arguments): void
+function fail(string $name, string $type, callable $callback, $value, ... $arguments): void
 {
 	Assert::$counter++;
 
 	try {
 		$callback($value, ...$arguments);
-	} catch (Throwable) {
+	} catch (Throwable $e) {
 		return;
 	}
 
@@ -72,6 +72,6 @@ function createCaseByTypes(array $types): array
 {
 	return [
 		'success' => getByTypes($types),
-		'fail' => getByTypes(exclude: $types),
+		'fail' => getByTypes([], $types),
 	];
 }

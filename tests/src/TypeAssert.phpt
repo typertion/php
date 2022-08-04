@@ -22,10 +22,10 @@ foreach ($manifest as $item) {
 	$case = createCaseByTypes($types);
 
 	foreach ($case['success'] as $row) {
-		success($name, $row['type'], TypeAssert::$method(...), $row['value']);
+		success($name, $row['type'], [TypeAssert::class, $method], $row['value']);
 	}
 
 	foreach ($case['fail'] as $row) {
-		fail($name, $row['type'], TypeAssert::$method(...), $row['value']);
+		fail($name, $row['type'], [TypeAssert::class, $method], $row['value']);
 	}
 }
