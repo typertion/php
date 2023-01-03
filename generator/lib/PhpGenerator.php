@@ -44,6 +44,7 @@ final class PhpGenerator {
 //				->setType('mixed'); // php 8.0
 
 			$method->addComment('@param mixed $value');
+			$method->addComment('@param string|(callable(): string|null)|null $label');
 
 			foreach ($type->parameters as $parameter) {
 				$method->addParameter($parameter->name)
@@ -54,8 +55,8 @@ final class PhpGenerator {
 				}
 			}
 
-			$method->addParameter('label', null)
-				->setType('?string');
+			$method->addParameter('label', null);
+//				->setType('string|callable|null'); -- PHP 8.0
 
 			if ($type->hasReturnTypeComment()) {
 				$method->addComment(sprintf('@return %s', $type->returnTypesCommentToString()));
@@ -112,6 +113,7 @@ final class PhpGenerator {
 
 			$method->addComment('@param mixed[] $array');
 			$method->addComment('@param int|string $key');
+			$method->addComment('@param string|(callable(): string|null)|null $label');
 
 			$signatureCall = [];
 
@@ -127,15 +129,15 @@ final class PhpGenerator {
 				}
 			}
 
-			$method->addParameter('label', null)
-				->setType('?string');
+			$method->addParameter('label', null);
+//				->setType('string|callable|null'); -- PHP 8.0
 
 			if ($type->hasReturnTypeComment()) {
 				$method->addComment(sprintf('@return %s', $type->returnTypesCommentToString()));
 			}
 
 			$method->addBody('if (!\array_key_exists($key, $array)) {');
-			$method->addBody("\tthrow OutOfBoundsException::create(\$key, \$array);");
+			$method->addBody("\tthrow OutOfBoundsException::create(\$key, \$array, \$label);");
 			$method->addBody('}');
 
 			$method->addBody('');

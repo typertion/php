@@ -9,11 +9,15 @@ final class AssertionFailedException extends LogicException
 
 	/**
 	 * @param mixed $value
+	 * @param string|(callable(): string|null)|null $label
 	 */
-	public static function create($value, string $expected, ?string $label): self
+	public static function create($value, string $expected, $label = null): self
 	{
+		$label ??= 'variable';
+		$label = is_callable($label) ? $label() : $label;
+
 		return new self(
-			sprintf('The %s expected to be %s, %s given.', $label ?? 'variable', $expected, self::getDebugType($value))
+			sprintf('The %s expected to be %s, %s given.', $label, $expected, self::getDebugType($value))
 		);
 	}
 

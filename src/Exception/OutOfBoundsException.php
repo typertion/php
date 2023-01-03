@@ -11,10 +11,16 @@ final class OutOfBoundsException extends Exception
 	/**
 	 * @param string|int $index
 	 * @param mixed[] $array
+	 * @param string|(callable(): string|null)|null $label
 	 */
-	public static function create($index, array $array): self
+	public static function create($index, array $array, $label = null): self
 	{
-		return new self(sprintf('Undefined index "%s"', $index) . self::didYouMean($array, $index));
+		$label = is_callable($label) ? $label() : $label;
+		$label = $label ? sprintf(' for %s', $label) : '';
+
+		$message = sprintf('Undefined index "%s"%s', $index, $label);
+
+		return new self($message . self::didYouMean($array, $index));
 	}
 
 	/**
