@@ -2,10 +2,9 @@
 
 namespace Typertion\Php\Exception;
 
-use Exception;
 use Nette\Utils\Helpers;
 
-final class OutOfBoundsException extends Exception
+final class OutOfBoundsException extends \OutOfBoundsException
 {
 
 	/**
