@@ -17,8 +17,34 @@ final class AssertionFailedException extends LogicException
 		$label = is_callable($label) ? $label() : $label;
 
 		return new self(
-			sprintf('The %s expected to be %s, %s given.', $label, $expected, self::getDebugType($value))
+			sprintf('The %s expected to be %s, %s given.', $label, $expected, self::getType($value))
 		);
+	}
+
+	/**
+	 * @param mixed $value
+	 */
+	private static function getType($value): string
+	{
+		$type = self::getDebugType($value);
+
+		if (\is_bool($value)) {
+			return sprintf('%s(%s)', $type, $value ? 'true' : 'false');
+		}
+
+		if (\is_float($value) || \is_int($value)) {
+			return sprintf('%s(%s)', $type, $value);
+		}
+
+		if (\is_string($value)) {
+			return sprintf('%s(%s)', $type, strlen($value));
+		}
+
+		if (\is_array($value)) {
+			return sprintf('%s(%s)', $type, count($value));
+		}
+
+		return $type;
 	}
 
 	/**
