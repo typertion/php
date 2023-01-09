@@ -5,19 +5,28 @@ namespace Typertion\Php\Helper;
 final class Validator
 {
 
-	public static function classStringOf(mixed $value, string $type): bool
+	/**
+	 * @param mixed $value
+	 */
+	public static function classStringOf($value, string $type): bool
 	{
-		return is_string($value) && is_a($value, $type, true);
+		return \is_string($value) && \is_a($value, $type, true);
 	}
 
-	public static function classString(mixed $value): bool
+	/**
+	 * @param mixed $value
+	 */
+	public static function classString($value): bool
 	{
-		return is_string($value) && class_exists($value);
+		return \is_string($value) && \class_exists($value);
 	}
 
-	public static function integerish(mixed &$value): bool
+	/**
+	 * @param mixed $value
+	 */
+	public static function integerish(&$value): bool
 	{
-		if (is_numeric($value)) {
+		if (\is_numeric($value)) {
 			$value = (int) $value;
 
 			return true;
@@ -26,9 +35,12 @@ final class Validator
 		return false;
 	}
 
-	public static function floatish(mixed &$value): bool
+	/**
+	 * @param mixed $value
+	 */
+	public static function floatish(&$value): bool
 	{
-		if (is_numeric($value)) {
+		if (\is_numeric($value)) {
 			$value = (float) $value;
 
 			return true;
