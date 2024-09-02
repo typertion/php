@@ -2,7 +2,7 @@
     "name": "typertion/php",
     "require": {
         "php": ">= 7.4",
-        "nette/utils": "^3.2"
+        "nette/utils": "^3.2 || ^4.0"
     },
     "autoload": {
         "psr-4": {
